@@ -1,1 +1,5 @@
-you made it to: index page
+<h1>All Landmarks </h1>
+
+<% @landmarks.all.each do |landmark|%>
+<p><%= landmark.name%> <%=landmark.year_completed%> </p>
+<% end %>
