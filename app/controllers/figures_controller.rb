@@ -38,7 +38,8 @@ class FiguresController < ApplicationController
 
   post '/figures/:id' do
     @figure=Figure.find(params[:id])
-    #write code here to update figure instace and redirect to '/figures/:id' to  show
+    @figure.update(params[:figure])
+    redirect to "/figures/#{@figure.id}"
   end
 
 end
