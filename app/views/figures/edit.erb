@@ -13,6 +13,6 @@
   <% Landmark.all.each do |landmark|%>
   <input id="landmark_<%=landmark.id%>" type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark)%> > <%=landmark.name%></input>
   <% end %>
-  
+  <br>
   <input type="submit" value="Edit Figure">
 </form>
