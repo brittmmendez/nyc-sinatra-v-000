@@ -1,1 +1,18 @@
-you made it to: edit page
+<h2>Edit Firgure Form</h2>
+<form method="POST" action="/figures/<%=@figure.id%>">
+
+
+  <p>Name: <input type="text" id="figure_name" name="figure[name]" value="<%=@figure.name%>"></p>
+
+  <p>Titles:</p>
+  <% Title.all.each do |title|%>
+  <input id="title_<%=title.id%>" type="checkbox" name="figure[title_ids][]" value="<%=title.id %>" <%='checked' if @figure.titles.include?(title) %>> <%=title.name%></input>
+    <% end %>
+                  
+  <p>Landmark:</p>
+  <% Landmark.all.each do |landmark|%>
+  <input id="landmark_<%=landmark.id%>" type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>" <%='checked' if @figure.landmarks.include?(landmark)%> > <%=landmark.name%></input>
+  <% end %>
+  
+  <input type="submit" value="Edit Figure">
+</form>
