@@ -12,13 +12,11 @@ class FiguresController < ApplicationController
   get '/figures' do
     @figures=Figure.all
     erb :'/figures/index'
-    #create index to iterate through all
   end
 
   get '/figures/:id' do
     @figure=Figure.find(params[:id])
     erb :'/figures/show'
-    #create show to display all info
   end
 
   get '/figures/:id/edit' do
@@ -31,8 +29,5 @@ class FiguresController < ApplicationController
     @figure=Figure.find(params[:id])
     #write code here to update figure instace and redirect to '/figures/:id' to  show
   end
-
-
-
 
 end

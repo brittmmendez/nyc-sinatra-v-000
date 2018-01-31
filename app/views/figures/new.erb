@@ -1,1 +1,14 @@
-you made it to: new page
+<h2>New Firgure Form</h2>
+<form method="POST" action="/figures">
+
+  <p>Name: <input type="text" name="figure[name]"></p>
+
+  <p>Title:</p>
+  <% Title.all.each do |title|%>
+  <input id="<%=title.name%>" type="checkbox" name="'figure[title_ids][]" value="<%=title.id%>"> <%=title.name%></input>
+  <% end %>
+
+  <p>Landmark:</p>
+  <% Landmark.all.each do |landmark|%>
+  <input id="<%=landmark.name%>" type="checkbox" name="figure[landmark_ids][]" value="<%=landmark.id%>"> <%=landmark.name%></input>
+  <% end %>
